@@ -1,0 +1,36 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/web/Dockerfile
+    container_name: lampstack_app
+    ports:
+      - "8080:80"
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_NAME: lamp_issue_tracker
+      DB_USER: lamp_user
+      DB_PASSWORD: lamp_pass
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: lampstack_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: lamp_issue_tracker
+      MYSQL_USER: lamp_user
+      MYSQL_PASSWORD: lamp_pass
+    ports:
+      - "33060:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+
+volumes:
+  db_data:
