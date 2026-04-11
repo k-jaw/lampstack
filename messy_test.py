@@ -3,7 +3,7 @@ messy_test.py
 Intentionally messy code for testing linters/refactors/static analysis.
 Contains nested loops, poor names, logic flaws, and performance bottlenecks.
 """
-
+ 
 def compute_stats(numbers):
     # poor variable names and an unnecessary nested loop that balloons complexity
     tot = 0
@@ -80,3 +80,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+ 
