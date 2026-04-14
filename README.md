@@ -146,5 +146,6 @@ echo "127.0.0.1 issue-tracker.local" | sudo tee -a /etc/hosts
   tail -f /var/log/apache2/issue-tracker-error.log
   ```
 - When a database connection fails, verify credentials in `includes/config.php` and confirm the MySQL user has `SELECT`, `INSERT`, and `UPDATE` privileges.
+
 - 
 # lampstack
