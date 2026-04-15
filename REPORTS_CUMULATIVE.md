@@ -214,3 +214,27 @@ data: {"id":"chatcmpl4ae27f51675044e5ad3b2118007f784e","object":"chat.completion
 data: [DONE]
 
 
+
+## 2026-04-15T02:42:11Z
+- **PR:** Audit test jira
+- **Audit:** PR summary
+- Title: “Audit test jira”
+- Description: None provided.
+
+Assessment
+- Insufficient information to summarize changes, scope, or risk without a diff, file list, or description.
+- If this is a test of Jira/audit integration, ensure it’s limited to non-production changes (tests/docs/CI), clearly labeled, and references a tracking ticket.
+
+Requested info to complete the summary
+- PR link or commit range
+- File change list and diff (or a brief description of what changed)
+- Purpose/impact (why the change is needed)
+- Any migrations, config changes, or feature flags
+- Test coverage and rollout plan
+
+Quick checklist (if this is an audit/Jira test PR)
+- No secrets or PII in test data
+- CI passes; tests isolated and deterministic
+- No unintended production code changes
+- Clear linkage to Jira issue (key in title/commits)
+- Appropriate labels (tests-only/chore) and reviewers assigned
